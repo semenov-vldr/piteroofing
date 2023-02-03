@@ -1,0 +1,57 @@
+.header
+  background-color: $black
+  position: fixed
+  width: 100%
+  top: 0
+  left: 0
+  z-index: 25
+  transition: .5s ease
+
+  &__container
+    padding-top: 10px
+    padding-bottom: 10px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    color: $white
+
+  &__logo-link
+    @extend .flex-center
+    width: 60px
+    height: 60px
+    border-radius: 50%
+    background-color: $white
+
+  &__logo-img
+    height: 35px
+
+  &__nav-list
+    display: flex
+    align-items: center
+    gap: 32px
+
+  &__nav-link
+    display: inline-block
+    overflow: hidden
+    position: relative
+    font-weight: 500
+    padding-bottom: 5px
+    &::before
+      content: ""
+      position: absolute
+      left: 0
+      bottom: 0
+      width: 100%
+      height: 2px
+      background-color: currentColor
+      transform: translateX(-100%)
+      transition: transform .3s ease
+    &:hover::before
+      transform: translateX(0)
+
+  &__social
+    &-list
+      display: flex
+      gap: 12px
+      align-items: center
+

@@ -1,0 +1,48 @@
+.accordion
+  position: relative
+
+  &__list
+    width: 100%
+    display: flex
+    flex-direction: column
+
+  &__item
+    overflow: hidden
+    padding: 24px 0
+    border-bottom: 1px solid #1212121A
+    cursor: pointer
+    min-height: 80px
+    &.js-accordion-active .accordion__content
+      max-height: 500px
+    &.js-accordion-active .accordion__icon
+      transform: rotate(45deg)
+
+
+  &__title
+    @include fontSize(16, 20)
+    font-weight: 500
+    line-height: 1.4
+    min-height: 32px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 20px
+    svg
+      transition: 0.2s linear
+      flex: 0 0 32px
+
+  &__content
+    width: 90%
+    @include fontSize(14, 16)
+    max-height: 0
+    overflow: hidden
+    transition: max-height ease-in-out 0.3s
+    & p
+      padding: 10px 0 0
+
+  &__icon
+    fill: $black
+    & path
+      fill: #fff
+
+
