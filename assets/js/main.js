@@ -18,6 +18,181 @@ function createAccordion (accordion) {
   });
 }
 
+function openForm () {
+
+    const form = document.querySelector('.form');
+    const formExcursionName = form.querySelector('.form__excursion-name');
+    const openFormBtns = document.querySelectorAll('.open-form'); // элементы с этим классом открывают форму
+
+    const close = form.querySelector('.form__close');
+    close.addEventListener('click', hiddenForm);
+
+    openFormBtns.forEach(openFormBtn => {
+      openFormBtn.addEventListener('click', () => visibleForm(openFormBtn));
+    });
+
+    function hiddenForm () {
+      form.classList.remove('js-form-active');
+      form.reset();
+      formExcursionName.textContent = '';
+    };
+
+    function visibleForm (openFormBtn) {
+      form.classList.add('js-form-active');
+      const titleSelectedCard = openFormBtn.closest('.excursions__card').querySelector('.excursions__card-title').textContent;
+      formExcursionName.textContent = titleSelectedCard;
+    };
+
+    document.addEventListener('click', (evt) => {
+      if(evt.target === form) hiddenForm();
+    });
+  };
+
+openForm()
+
+
+
+
+
+
+{
+
+  const TOKEN = "6031545253:AAHPW5wVsvWNQoCWuLIstUvjHCbKPkbUC3c";
+  const CHAT_ID = "-1001818251069";
+  const URL_API = `https://api.telegram.org/bot${ TOKEN }/sendMessage`;
+
+
+
+  const form = document.querySelector('.form');
+
+  if (form) {
+    form.addEventListener('submit', sendMsgTelegram );
+
+  }
+
+
+  function sendMsgTelegram (evt) {
+    evt.preventDefault();
+
+    //let message = `<b>Заявка с сайта SPB</b>\n`;
+
+    let message = `<b>Наименование экскурсии:</b> ${ this.querySelector('.form__excursion-name').textContent }\n`;
+
+    message += `<b>Имя отправителя:</b> ${ this.name.value }\n`;
+    message += `<b>Дата:</b> ${ this.date.value }\n`;
+    message += `<b>Время:</b> ${ this.time.value }\n`;
+    message += `<b>Формат:</b> ${ this.querySelector('.form__input-format').value }\n`;
+    message += `<b>Кол-во чел:</b> ${ this.querySelector('.form__input-count-people').value }\n`;
+    message += `<b>Телефон:</b> ${ this.phone.value }\n`;
+    message += `<b>Почта:</b> ${ this.email.value }\n`;
+    message += `<b>Сообщение:</b> ${ this.message.value }\n`;
+
+    axios.post(URL_API, {
+      chat_id: CHAT_ID,
+      parse_mode: 'html',
+      text: message,
+    })
+      .then(() => {
+        this.name.value = "";
+        this.email.value = "";
+        console.log('Заявка успешно отправлена');
+      })
+      .catch((err) => {
+        console.warn(err);
+      })
+      .finally(() => {
+        console.log('Конец');
+      })
+  };
+
+
+
+}
+
+{
+
+  let mySwiper;
+
+  const swiperList = document.querySelectorAll('.gallery__slider');
+
+  if (swiperList) createSwiper(swiperList);
+
+
+
+  function createSwiper (swiperList) {
+    swiperList.forEach(swiper => {
+
+      mySwiper = new Swiper(swiper, {
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true,
+        // },
+        // navigation: {
+        //   nextEl: '.slider-nav__next',
+        //   prevEl: '.slider-nav__prev',
+        // },
+
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        //   draggable: true,
+        // },
+
+        uniqueNavElements: true,
+
+        slidesPerView: 1.5,
+
+        // Бесконечная прокрутка
+        loop: true,
+
+        // Откл функционала, если слайдов меньше, чем нужно
+        watchOverflow: true,
+
+        centeredSlides: true,
+
+        // Отступ между слайдами
+        spaceBetween: 24,
+
+        // Стартовый слайд
+        initialSlide: 0,
+
+        // Брейк поинты (адаптив)
+        // Ширина экрана
+        breakpoints: {
+          // 320: {
+          //   slidesPerView: 1.1,
+          //   spaceBetween: 16,
+          // },
+          //
+          // 480: {
+          //   slidesPerView: 2.2,
+          //   spaceBetween: 20,
+          // },
+          //
+          // 768: {
+          //   slidesPerView: 3.2
+          // },
+          //
+          // 1100: {
+          //   slidesPerView: 4
+          // },
+        }
+
+      });
+
+    })
+  };
+
+
+
+
+
+
+
+
+
+
+}
+
 const header = document.querySelector('header.header');
 
 if (header) {
@@ -29,9 +204,73 @@ if (header) {
     toggleScrollBody();
   });
 
-
   // scroll
   window.addEventListener('scroll', () => scrollHeader (header) );
+
+}
+
+
+{
+
+  const popupSwiper = document.querySelector('.popup-excursion__slider');
+
+  if (popupSwiper) {
+
+    let mySwiper = new Swiper(popupSwiper, {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      uniqueNavElements: true,
+
+      slidesPerView: 1,
+
+      // Бесконечная прокрутка
+      loop: true,
+
+      // Откл функционала, если слайдов меньше, чем нужно
+      watchOverflow: true,
+
+      centeredSlides: false,
+
+      // Отступ между слайдами
+      spaceBetween: 16,
+
+      // Стартовый слайд
+      initialSlide: 0,
+
+      // Брейк поинты (адаптив)
+      // Ширина экрана
+      // breakpoints: {
+      //   320: {
+      //     slidesPerView: 2,
+      //     spaceBetween: 12,
+      //   },
+      //   768: {
+      //     slidesPerView: 3,
+      //     spaceBetween: 20,
+      //   },
+      //
+      //   1100: {
+      //     spaceBetween: 40,
+      //   },
+      // }
+    });
+
+  }
+
+
+
+
+
+
+
+
 
 }
 
@@ -44,13 +283,17 @@ if (excursions) {
   excursionsCards.forEach(excursionsCard => {
     const popup = excursionsCard.querySelector('.popup-excursion');
 
+
     function activePopup () {
       popup.classList.add('js-popup-open');
       excursionsCard.addEventListener('click', onDocumentClick);
+      blockScrollBody();
 
       excursionsCard.addEventListener('click', (evt) => {
-        if (evt.target.classList.contains('popup-excursion__close')) {
+        if (evt.target.classList.contains('popup-excursion__close')
+          || evt.target.classList.contains('popup-excursion__button')) {
           closePopup();
+          unblockScrollBody();
         }
       });
     };
@@ -62,13 +305,20 @@ if (excursions) {
     function onDocumentClick (evt) {
       if (evt.target.classList.contains('popup-excursion')) {
         closePopup();
+        unblockScrollBody();
       }
     };
 
     excursionsCard.addEventListener('click', activePopup);
+  });
 
 
-  })
+
+
+
+
+
+
 
 }
 
@@ -144,6 +394,13 @@ function unblockScrollBody () {
 function toggleScrollBody () {
   html.classList.toggle(classBlockScroll);
 };
+
+let maskTel = new Inputmask("+7 (999) 999-99-99");
+maskTel.mask("[type='tel']");
+
+let maskTime = new Inputmask("99:99");
+maskTime.mask(".form__input-time");
+
 
 let previousPosition = document.documentElement.scrollTop;
 function scrollHeader (header) {

@@ -1,12 +1,13 @@
 
 <!-- ---- Form ------------>
 <!-- Name-->
+<!-- Дата-->
+<!-- Формат-->
+<!-- Кол-во человек-->
+<!-- Time-->
 <!-- Tel-->
 <!-- Email-->
-<!-- Text-->
-<!-- Кнопка "отправить" и согласие-->
-<!-- шаблон прогресс-бара-->
-<!-- карточка партнера--><!DOCTYPE html>
+<!-- Text--><!DOCTYPE html>
 <html lang="ru-RU">
   <head>
     <meta charset="utf-8">
@@ -22,6 +23,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
 <!-- Yandex map script -->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=dad86943-dfef-45bd-9c5e-c404323cb093&amp;lang=ru_RU" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="page">
@@ -29,10 +31,10 @@
         <div class="header__container container"><a class="header__logo-link" href="index.html"><img class="header__logo-img" src="./assets/img/logo.png"></a>
           <nav class="header__nav">
             <ul class="header__nav-list">
-              <li class="header__nav-item"><a class="header__nav-link" href="##">Экскурсии</a></li>
+              <li class="header__nav-item"><a class="header__nav-link" href="#excursions">Экскурсии</a></li>
               <li class="header__nav-item"><a class="header__nav-link" href="##">Фото</a></li>
               <li class="header__nav-item"><a class="header__nav-link" href="##">Отзывы</a></li>
-              <li class="header__nav-item"><a class="header__nav-link" href="##">Инфо</a></li>
+              <li class="header__nav-item"><a class="header__nav-link" href="#faq">Инфо</a></li>
             </ul>
             <div class="header__social header__social--mobile">
               <ul class="header__social-list">
@@ -136,7 +138,7 @@
             <div class="swiper-button-next swiper-button-white"></div>
           </div>
         </div>
-        <section class="excursions">
+        <section class="excursions" id="excursions">
           <div class="excursions__container container">
             <ul class="excursions__list">
               <li class="excursions__card" style="background-image: url(./assets/img/roof-group/main.jpg)">
@@ -148,11 +150,23 @@
                 </div>
                 <div class="popup-excursion">
                   <div class="popup-excursion__container">
-                    <button class="popup-excursion__close">Close</button>
-                    <div class="popup-excursion__slider">
+                    <button class="popup-excursion__close">
+                      Close<svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="24px" height="24px" viewBox="0 0 24 24">
+  <path d="M4.293,18.293,10.586,12,4.293,5.707A1,1,0,0,1,5.707,4.293L12,10.586l6.293-6.293a1,1,0,1,1,1.414,1.414L13.414,12l6.293,6.293a1,1,0,1,1-1.414,1.414L12,13.414,5.707,19.707a1,1,0,0,1-1.414-1.414Z"/>
+</svg>
+
+                    </button>
+                    <!--button.popup-excursion__close.close-btn-->
+                    <!--  include ../../img/icons/close.svg-->
+                    <div class="popup-excursion__slider swiper">
                       <div class="swiper-wrapper">
-                        <div class="swiper-slide">Экскурсия по системе крыш в центре города проходит в самом начале Невс</div>
+                        <div class="swiper-slide"><img src="https://m3.netinfo.bg/media/images/48934/48934095/896-504-samota-myzh.jpg"></div>
+                        <div class="swiper-slide"><img src="https://www.itfseafarers.org/sites/default/files/styles/node_main/public/node/issues/image/Abandoned-Seafarers.jpg?itok=GgG4nSC-"></div>
+                        <div class="swiper-slide"><img src="https://static.tildacdn.com/tild3530-6233-4262-a266-323831663361/14_-min.JPG"></div>
                       </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
                     </div>
                     <div class="popup-excursion__content">
                       <h2 class="popup-excursion__title">Групповая экскурсия по крышам</h2><span class="popup-excursion__subtitle">Центр города | Вид на все соборы | Интересный гид</span>
@@ -176,7 +190,7 @@
                         </ul>
                         <h3>Продолжительность экскурсии: 1 час</h3>
                       </div>
-                      <button>Записаться</button>
+                      <button class="popup-excursion__button open-form">Записаться</button>
                     </div>
                   </div>
                 </div>
@@ -188,12 +202,104 @@
                     <button class="excursions__card-button">Побробнее</button>
                   </div>
                 </div>
+                <div class="popup-excursion">
+                  <div class="popup-excursion__container">
+                    <button class="popup-excursion__close">
+                      Close<svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="24px" height="24px" viewBox="0 0 24 24">
+  <path d="M4.293,18.293,10.586,12,4.293,5.707A1,1,0,0,1,5.707,4.293L12,10.586l6.293-6.293a1,1,0,1,1,1.414,1.414L13.414,12l6.293,6.293a1,1,0,1,1-1.414,1.414L12,13.414,5.707,19.707a1,1,0,0,1-1.414-1.414Z"/>
+</svg>
+
+                    </button>
+                    <!--button.popup-excursion__close.close-btn-->
+                    <!--  include ../../img/icons/close.svg-->
+                    <div class="popup-excursion__slider swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://m3.netinfo.bg/media/images/48934/48934095/896-504-samota-myzh.jpg"></div>
+                        <div class="swiper-slide"><img src="https://www.itfseafarers.org/sites/default/files/styles/node_main/public/node/issues/image/Abandoned-Seafarers.jpg?itok=GgG4nSC-"></div>
+                        <div class="swiper-slide"><img src="https://static.tildacdn.com/tild3530-6233-4262-a266-323831663361/14_-min.JPG"></div>
+                      </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="popup-excursion__content">
+                      <h2 class="popup-excursion__title">Групповая экскурсия по крышам</h2><span class="popup-excursion__subtitle">Центр города | Вид на все соборы | Интересный гид</span>
+                      <div class="popup-excursion__price"><span>Стоимость: 800 ₽/чел.</span></div>
+                      <div class="popup-excursion__info">
+                        <p>Экскурсия по системе крыш в центре города проходит в самом начале Невского проспекта рядом с Дворцовой площадью. После сбора группы гид расскажет о правилах безопасности на крыше. Далее группа поднимается на крышу.</p>
+                        <h3>Что такое система крыш?</h3>
+                        <p>В Петербурге очень плотная застройка, это дает возможность гулять по крышам как по улице, не спускаясь вниз. (Обращаем Ваше внимание, что Вы поднимаетесь 1 раз, и сам маршрут проходит по системе соединенных крыш). Группа передвигается по не скользящим покрытиям, которые дают возможность пройти по всему маршруту и увидеть основные достопримечательности исторического центра. Так как в наш маршрут включены самые высокие дома в округе, то и панорама будет открываться на все главные исторические доминанты.</p>
+                        <h3>Вы увидите:</h3>
+                        <ul>
+                          <li>Исаакиевский собор как на ладони;</li>
+                          <li>Казанский и Владимирский соборы</li>
+                          <li>Александровский сад</li>
+                          <li>Здание генштаба</li>
+                          <li>Александровскую колонну</li>
+                          <li>Петропавловскую крепость</li>
+                          <li>Спас-на-Крови</li>
+                          <li>Адмиралтейство</li>
+                          <li>Эрмитаж</li>
+                          <li>Площадь Восстания</li>
+                        </ul>
+                        <h3>Продолжительность экскурсии: 1 час</h3>
+                      </div>
+                      <button class="popup-excursion__button open-form">Записаться</button>
+                    </div>
+                  </div>
+                </div>
               </li>
               <li class="excursions__card" style="background-image: url(./assets/img/paradnye/main.jpg)">
                 <div class="excursions__card-content">
                   <h3 class="excursions__card-title">Экскурсия по парадным и дворам</h3>
                   <div class="excursions__card-footer"><span class="excursions__card-price">от 1000 ₽</span>
                     <button class="excursions__card-button">Побробнее</button>
+                  </div>
+                </div>
+                <div class="popup-excursion">
+                  <div class="popup-excursion__container">
+                    <button class="popup-excursion__close">
+                      Close<svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="24px" height="24px" viewBox="0 0 24 24">
+  <path d="M4.293,18.293,10.586,12,4.293,5.707A1,1,0,0,1,5.707,4.293L12,10.586l6.293-6.293a1,1,0,1,1,1.414,1.414L13.414,12l6.293,6.293a1,1,0,1,1-1.414,1.414L12,13.414,5.707,19.707a1,1,0,0,1-1.414-1.414Z"/>
+</svg>
+
+                    </button>
+                    <!--button.popup-excursion__close.close-btn-->
+                    <!--  include ../../img/icons/close.svg-->
+                    <div class="popup-excursion__slider swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://m3.netinfo.bg/media/images/48934/48934095/896-504-samota-myzh.jpg"></div>
+                        <div class="swiper-slide"><img src="https://www.itfseafarers.org/sites/default/files/styles/node_main/public/node/issues/image/Abandoned-Seafarers.jpg?itok=GgG4nSC-"></div>
+                        <div class="swiper-slide"><img src="https://static.tildacdn.com/tild3530-6233-4262-a266-323831663361/14_-min.JPG"></div>
+                      </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="popup-excursion__content">
+                      <h2 class="popup-excursion__title">Групповая экскурсия по крышам</h2><span class="popup-excursion__subtitle">Центр города | Вид на все соборы | Интересный гид</span>
+                      <div class="popup-excursion__price"><span>Стоимость: 800 ₽/чел.</span></div>
+                      <div class="popup-excursion__info">
+                        <p>Экскурсия по системе крыш в центре города проходит в самом начале Невского проспекта рядом с Дворцовой площадью. После сбора группы гид расскажет о правилах безопасности на крыше. Далее группа поднимается на крышу.</p>
+                        <h3>Что такое система крыш?</h3>
+                        <p>В Петербурге очень плотная застройка, это дает возможность гулять по крышам как по улице, не спускаясь вниз. (Обращаем Ваше внимание, что Вы поднимаетесь 1 раз, и сам маршрут проходит по системе соединенных крыш). Группа передвигается по не скользящим покрытиям, которые дают возможность пройти по всему маршруту и увидеть основные достопримечательности исторического центра. Так как в наш маршрут включены самые высокие дома в округе, то и панорама будет открываться на все главные исторические доминанты.</p>
+                        <h3>Вы увидите:</h3>
+                        <ul>
+                          <li>Исаакиевский собор как на ладони;</li>
+                          <li>Казанский и Владимирский соборы</li>
+                          <li>Александровский сад</li>
+                          <li>Здание генштаба</li>
+                          <li>Александровскую колонну</li>
+                          <li>Петропавловскую крепость</li>
+                          <li>Спас-на-Крови</li>
+                          <li>Адмиралтейство</li>
+                          <li>Эрмитаж</li>
+                          <li>Площадь Восстания</li>
+                        </ul>
+                        <h3>Продолжительность экскурсии: 1 час</h3>
+                      </div>
+                      <button class="popup-excursion__button open-form">Записаться</button>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -204,6 +310,52 @@
                     <button class="excursions__card-button">Побробнее</button>
                   </div>
                 </div>
+                <div class="popup-excursion">
+                  <div class="popup-excursion__container">
+                    <button class="popup-excursion__close">
+                      Close<svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="24px" height="24px" viewBox="0 0 24 24">
+  <path d="M4.293,18.293,10.586,12,4.293,5.707A1,1,0,0,1,5.707,4.293L12,10.586l6.293-6.293a1,1,0,1,1,1.414,1.414L13.414,12l6.293,6.293a1,1,0,1,1-1.414,1.414L12,13.414,5.707,19.707a1,1,0,0,1-1.414-1.414Z"/>
+</svg>
+
+                    </button>
+                    <!--button.popup-excursion__close.close-btn-->
+                    <!--  include ../../img/icons/close.svg-->
+                    <div class="popup-excursion__slider swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://m3.netinfo.bg/media/images/48934/48934095/896-504-samota-myzh.jpg"></div>
+                        <div class="swiper-slide"><img src="https://www.itfseafarers.org/sites/default/files/styles/node_main/public/node/issues/image/Abandoned-Seafarers.jpg?itok=GgG4nSC-"></div>
+                        <div class="swiper-slide"><img src="https://static.tildacdn.com/tild3530-6233-4262-a266-323831663361/14_-min.JPG"></div>
+                      </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="popup-excursion__content">
+                      <h2 class="popup-excursion__title">Групповая экскурсия по крышам</h2><span class="popup-excursion__subtitle">Центр города | Вид на все соборы | Интересный гид</span>
+                      <div class="popup-excursion__price"><span>Стоимость: 800 ₽/чел.</span></div>
+                      <div class="popup-excursion__info">
+                        <p>Экскурсия по системе крыш в центре города проходит в самом начале Невского проспекта рядом с Дворцовой площадью. После сбора группы гид расскажет о правилах безопасности на крыше. Далее группа поднимается на крышу.</p>
+                        <h3>Что такое система крыш?</h3>
+                        <p>В Петербурге очень плотная застройка, это дает возможность гулять по крышам как по улице, не спускаясь вниз. (Обращаем Ваше внимание, что Вы поднимаетесь 1 раз, и сам маршрут проходит по системе соединенных крыш). Группа передвигается по не скользящим покрытиям, которые дают возможность пройти по всему маршруту и увидеть основные достопримечательности исторического центра. Так как в наш маршрут включены самые высокие дома в округе, то и панорама будет открываться на все главные исторические доминанты.</p>
+                        <h3>Вы увидите:</h3>
+                        <ul>
+                          <li>Исаакиевский собор как на ладони;</li>
+                          <li>Казанский и Владимирский соборы</li>
+                          <li>Александровский сад</li>
+                          <li>Здание генштаба</li>
+                          <li>Александровскую колонну</li>
+                          <li>Петропавловскую крепость</li>
+                          <li>Спас-на-Крови</li>
+                          <li>Адмиралтейство</li>
+                          <li>Эрмитаж</li>
+                          <li>Площадь Восстания</li>
+                        </ul>
+                        <h3>Продолжительность экскурсии: 1 час</h3>
+                      </div>
+                      <button class="popup-excursion__button open-form">Записаться</button>
+                    </div>
+                  </div>
+                </div>
               </li>
               <li class="excursions__card" style="background-image: url(./assets/img/svidanie/main.jpeg)">
                 <div class="excursions__card-content">
@@ -212,11 +364,57 @@
                     <button class="excursions__card-button">Побробнее</button>
                   </div>
                 </div>
+                <div class="popup-excursion">
+                  <div class="popup-excursion__container">
+                    <button class="popup-excursion__close">
+                      Close<svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="24px" height="24px" viewBox="0 0 24 24">
+  <path d="M4.293,18.293,10.586,12,4.293,5.707A1,1,0,0,1,5.707,4.293L12,10.586l6.293-6.293a1,1,0,1,1,1.414,1.414L13.414,12l6.293,6.293a1,1,0,1,1-1.414,1.414L12,13.414,5.707,19.707a1,1,0,0,1-1.414-1.414Z"/>
+</svg>
+
+                    </button>
+                    <!--button.popup-excursion__close.close-btn-->
+                    <!--  include ../../img/icons/close.svg-->
+                    <div class="popup-excursion__slider swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://m3.netinfo.bg/media/images/48934/48934095/896-504-samota-myzh.jpg"></div>
+                        <div class="swiper-slide"><img src="https://www.itfseafarers.org/sites/default/files/styles/node_main/public/node/issues/image/Abandoned-Seafarers.jpg?itok=GgG4nSC-"></div>
+                        <div class="swiper-slide"><img src="https://static.tildacdn.com/tild3530-6233-4262-a266-323831663361/14_-min.JPG"></div>
+                      </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="popup-excursion__content">
+                      <h2 class="popup-excursion__title">Групповая экскурсия по крышам</h2><span class="popup-excursion__subtitle">Центр города | Вид на все соборы | Интересный гид</span>
+                      <div class="popup-excursion__price"><span>Стоимость: 800 ₽/чел.</span></div>
+                      <div class="popup-excursion__info">
+                        <p>Экскурсия по системе крыш в центре города проходит в самом начале Невского проспекта рядом с Дворцовой площадью. После сбора группы гид расскажет о правилах безопасности на крыше. Далее группа поднимается на крышу.</p>
+                        <h3>Что такое система крыш?</h3>
+                        <p>В Петербурге очень плотная застройка, это дает возможность гулять по крышам как по улице, не спускаясь вниз. (Обращаем Ваше внимание, что Вы поднимаетесь 1 раз, и сам маршрут проходит по системе соединенных крыш). Группа передвигается по не скользящим покрытиям, которые дают возможность пройти по всему маршруту и увидеть основные достопримечательности исторического центра. Так как в наш маршрут включены самые высокие дома в округе, то и панорама будет открываться на все главные исторические доминанты.</p>
+                        <h3>Вы увидите:</h3>
+                        <ul>
+                          <li>Исаакиевский собор как на ладони;</li>
+                          <li>Казанский и Владимирский соборы</li>
+                          <li>Александровский сад</li>
+                          <li>Здание генштаба</li>
+                          <li>Александровскую колонну</li>
+                          <li>Петропавловскую крепость</li>
+                          <li>Спас-на-Крови</li>
+                          <li>Адмиралтейство</li>
+                          <li>Эрмитаж</li>
+                          <li>Площадь Восстания</li>
+                        </ul>
+                        <h3>Продолжительность экскурсии: 1 час</h3>
+                      </div>
+                      <button class="popup-excursion__button open-form">Записаться</button>
+                    </div>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
         </section>
-        <section class="faq">
+        <section class="faq" id="faq">
           <div class="faq__container container">
             <h2 class="title-section faq__title">Часто задаваемые вопросы</h2>
             <div class="accordion">
@@ -309,6 +507,92 @@
             </div>
           </div>
         </section>
+        <div class="gallery">
+          <div class="gallery__container container">
+            <h2 class="title-section">Фотогалерея</h2>
+            <div class="gallery__slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="https://cdn1.ozone.ru/s3/multimedia-v/6042448243.jpg"></div>
+                <div class="swiper-slide"><img src="https://fikiwiki.com/uploads/posts/2022-02/1644855666_23-fikiwiki-com-p-kartinki-khd-kachestva-24.jpg"></div>
+                <div class="swiper-slide"><img src="https://nn.pannomd.ru/goods/or_5548.jpg"></div>
+                <div class="swiper-slide"><img src="https://nn.pannomd.ru/goods/6334.jpg"></div>
+                <div class="swiper-slide"><img src="https://get.wallhere.com/photo/sunset-sea-city-cityscape-bay-night-reflection-sunrise-evening-coast-horizon-dusk-dawn-165134.jpg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="form form--popup" action="" method="POST" aria-hidden="true">
+          <div class="form__container container"><span class="form__close close-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="24px" height="24px" viewBox="0 0 24 24">
+  <path d="M4.293,18.293,10.586,12,4.293,5.707A1,1,0,0,1,5.707,4.293L12,10.586l6.293-6.293a1,1,0,1,1,1.414,1.414L13.414,12l6.293,6.293a1,1,0,1,1-1.414,1.414L12,13.414,5.707,19.707a1,1,0,0,1-1.414-1.414Z"/>
+</svg>
+</span>
+            <h3 class="form__title">Ваша запись на экскурсию</h3>
+            <h4 class="form__excursion-name"></h4>
+            <div class="form__input-container">
+              <label>Как к вам обращаться ?
+                <input placeholder="Ваше имя, фамилия" name="name" pattern="^[A-Za-zА-Яа-яЁё\s]+$" autocomplete="off" maxlength="40"/>
+                <!--span.form__error.form__error--inputName Ошибка-->
+              </label>
+            </div>
+            <div class="form__input-container">
+              <label>Дата экскурсии
+                <input placeholder="дд.мм.гггг" type="date" name="date" autocomplete="off" maxlength="10"/>
+                <!--span.form__error.form__error--inputDate-->
+              </label>
+            </div>
+            <div class="form__input-container">
+              <label>Формат экскурсии
+                <select class="form__input-format">
+                  <option value="Выберите формат экскурсии">Выберите формат экскурсии</option>
+                  <option value="Групповой">Групповой (в составе общей группы)</option>
+                  <option value="Индивидуально">Индивидуально (только Вы и гид)</option>
+                </select>
+              </label>
+            </div>
+            <div class="form__input-container">
+              <label>Сколько у Вас человек?
+                <select class="form__input-count-people">
+                  <option value="1">1 чел</option>
+                  <option value="2">2 чел</option>
+                  <option value="3">3 чел</option>
+                  <option value="4">4 чел</option>
+                  <option value="5">5 чел</option>
+                  <option value="6">6 чел</option>
+                  <option value="7">7 чел</option>
+                  <option value="8">8 чел</option>
+                  <option value="9">9 чел</option>
+                  <option value="10">10 чел</option>
+                  <option value="Более 10">Более 10 чел.</option>
+                </select>
+              </label>
+            </div>
+            <div class="form__input-container">
+              <label>Ориентировочное время?
+                <input class="form__input-time" name="time" placeholder="c 11:00 до 23:00" autocomplete="off"/>
+              </label>
+            </div>
+            <div class="form__input-container">
+              <label>Телефон
+                <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="off"/>
+                <!--span.form__error.form__error--inputTel-->
+              </label>
+            </div>
+            <div class="form__input-container">
+              <label>Почта
+                <input type="email" name="email" maxlength="40" placeholder="example@email.ru*" pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"/>
+                <!--span.form__error.form__error--inputEmail-->
+              </label>
+            </div>
+            <div class="form__input-container">
+              <label>Комментарий
+                <textarea placeholder="Введите ваше сообщение..." name="message" maxlength="200" rows="4"></textarea>
+                <!--span.form__error.form__error--inputText-->
+              </label>
+            </div>
+            <button class="button button--accent" type="submit">Отправить</button>
+            <p>Нажатием на кнопку вы подтверждаете свою запись на экскурсию и обработку персональных данных в соответствии пользовательским соглашением.</p>
+          </div>
+        </form>
       </main>
       <footer class="footer">
         <div class="footer__container container">
