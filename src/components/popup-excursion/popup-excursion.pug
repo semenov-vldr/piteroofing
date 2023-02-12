@@ -2,10 +2,22 @@
   .popup-excursion__container
 
     button.popup-excursion__close Close
+      include ../../img/icons/close.svg
+    //button.popup-excursion__close.close-btn
+    //  include ../../img/icons/close.svg
 
-    .popup-excursion__slider
+    .popup-excursion__slider.swiper
       .swiper-wrapper
-        .swiper-slide Экскурсия по системе крыш в центре города проходит в самом начале Невс
+        .swiper-slide
+          img(src="https://m3.netinfo.bg/media/images/48934/48934095/896-504-samota-myzh.jpg")
+        .swiper-slide
+          img(src="https://www.itfseafarers.org/sites/default/files/styles/node_main/public/node/issues/image/Abandoned-Seafarers.jpg?itok=GgG4nSC-")
+        .swiper-slide
+          img(src="https://static.tildacdn.com/tild3530-6233-4262-a266-323831663361/14_-min.JPG")
+
+      .swiper-button-next
+      .swiper-button-prev
+      .swiper-pagination
 
 
     .popup-excursion__content
@@ -39,4 +51,4 @@
         h3 Продолжительность экскурсии: 1 час
 
 
-      button Записаться
+      button.popup-excursion__button.open-form Записаться

@@ -9,7 +9,6 @@ if (header) {
     toggleScrollBody();
   });
 
-
   // scroll
   window.addEventListener('scroll', () => scrollHeader (header) );
 

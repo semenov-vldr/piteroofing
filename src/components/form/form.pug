@@ -1,0 +1,19 @@
+form.form.form--popup(action="" method="POST" aria-hidden="true")
+  .form__container.container
+    span.form__close.close-btn
+      include ../../img/icons/close.svg
+
+    h3.form__title Ваша запись на экскурсию
+    h4.form__excursion-name
+
+
+    +inputName
+    +inputDate
+    +inputFormat
+    +inputCountPeople
+    +inputTime
+    +inputTel
+    +inputEmail
+    +inputText
+
+    +FormAction
