@@ -28,13 +28,13 @@
   <body>
     <div class="page">
       <header class="header">
-        <div class="header__container container"><a class="header__logo-link" href="index.html"><img class="header__logo-img" src="./assets/img/logo.png"></a>
+        <div class="header__container container"><a class="logo" href="index.html"><img src="./assets/img/logo.png"></a>
           <nav class="header__nav">
             <ul class="header__nav-list">
               <li class="header__nav-item"><a class="header__nav-link" href="#excursions">Экскурсии</a></li>
               <li class="header__nav-item"><a class="header__nav-link" href="##">Фото</a></li>
               <li class="header__nav-item"><a class="header__nav-link" href="##">Отзывы</a></li>
-              <li class="header__nav-item"><a class="header__nav-link" href="#faq">Инфо</a></li>
+              <li class="header__nav-item"><a class="header__nav-link" href="#faq">FAQ</a></li>
             </ul>
             <div class="header__social header__social--mobile">
               <ul class="header__social-list">
@@ -414,6 +414,20 @@
             </ul>
           </div>
         </section>
+        <div class="gallery">
+          <div class="gallery__container container">
+            <h2 class="title-section">Фотогалерея</h2>
+            <div class="gallery__slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="https://cdn1.ozone.ru/s3/multimedia-v/6042448243.jpg"></div>
+                <div class="swiper-slide"><img src="https://fikiwiki.com/uploads/posts/2022-02/1644855666_23-fikiwiki-com-p-kartinki-khd-kachestva-24.jpg"></div>
+                <div class="swiper-slide"><img src="https://nn.pannomd.ru/goods/or_5548.jpg"></div>
+                <div class="swiper-slide"><img src="https://nn.pannomd.ru/goods/6334.jpg"></div>
+                <div class="swiper-slide"><img src="https://get.wallhere.com/photo/sunset-sea-city-cityscape-bay-night-reflection-sunrise-evening-coast-horizon-dusk-dawn-165134.jpg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <section class="faq" id="faq">
           <div class="faq__container container">
             <h2 class="title-section faq__title">Часто задаваемые вопросы</h2>
@@ -507,20 +521,6 @@
             </div>
           </div>
         </section>
-        <div class="gallery">
-          <div class="gallery__container container">
-            <h2 class="title-section">Фотогалерея</h2>
-            <div class="gallery__slider swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="https://cdn1.ozone.ru/s3/multimedia-v/6042448243.jpg"></div>
-                <div class="swiper-slide"><img src="https://fikiwiki.com/uploads/posts/2022-02/1644855666_23-fikiwiki-com-p-kartinki-khd-kachestva-24.jpg"></div>
-                <div class="swiper-slide"><img src="https://nn.pannomd.ru/goods/or_5548.jpg"></div>
-                <div class="swiper-slide"><img src="https://nn.pannomd.ru/goods/6334.jpg"></div>
-                <div class="swiper-slide"><img src="https://get.wallhere.com/photo/sunset-sea-city-cityscape-bay-night-reflection-sunrise-evening-coast-horizon-dusk-dawn-165134.jpg"></div>
-              </div>
-            </div>
-          </div>
-        </div>
         <form class="form form--popup" action="" method="POST" aria-hidden="true">
           <div class="form__container container"><span class="form__close close-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="24px" height="24px" viewBox="0 0 24 24">
   <path d="M4.293,18.293,10.586,12,4.293,5.707A1,1,0,0,1,5.707,4.293L12,10.586l6.293-6.293a1,1,0,1,1,1.414,1.414L13.414,12l6.293,6.293a1,1,0,1,1-1.414,1.414L12,13.414,5.707,19.707a1,1,0,0,1-1.414-1.414Z"/>
@@ -596,7 +596,28 @@
       </main>
       <footer class="footer">
         <div class="footer__container container">
-          <h1>Footer</h1>
+          <div class="footer__col footer__col--left">
+            <p class="footer__text-main">Экскурсии по крышам, <br> дворам и парадным</p><a class="logo" href="index.html"><img src="./assets/img/logo.png"></a>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Меню сайта</h4>
+            <nav class="footer__nav">
+              <ul class="footer__nav-list">
+                <li class="footer__nav-item"><a class="footer__nav-link" href="#excursions">Экскурсии</a></li>
+                <li class="footer__nav-item"><a class="footer__nav-link" href="##">Фото</a></li>
+                <li class="footer__nav-item"><a class="footer__nav-link" href="##">Отзывы</a></li>
+                <li class="footer__nav-item"><a class="footer__nav-link" href="#faq">FAQ</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Контакты</h4>
+            <ul class="footer__contact-list">
+              <li class="footer__contact-item"><span>Телефон:</span><a class="footer__contact-link" href="">8 (925) 553-62-20</a></li>
+              <li class="footer__contact-item"><a class="footer__contact-link" href="">Мы в Телеграмме</a></li>
+              <li class="footer__contact-item footer__contact-item--whatsapp"><a class="footer__contact-link" href="">Напишите нам в WhatsApp</a></li>
+            </ul>
+          </div>
         </div>
       </footer>
     </div>
