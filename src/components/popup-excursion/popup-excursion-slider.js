@@ -1,10 +1,11 @@
 
 {
 
-  const popupSwiper = document.querySelector('.popup-excursion__slider');
+  const popupSwiperList = document.querySelectorAll('.popup-excursion__slider');
 
-  if (popupSwiper) {
+  if (popupSwiperList) {
 
+  popupSwiperList.forEach(popupSwiper => {
     let mySwiper = new Swiper(popupSwiper, {
       pagination: {
         el: '.swiper-pagination',
@@ -33,23 +34,8 @@
       // Стартовый слайд
       initialSlide: 0,
 
-      // Брейк поинты (адаптив)
-      // Ширина экрана
-      // breakpoints: {
-      //   320: {
-      //     slidesPerView: 2,
-      //     spaceBetween: 12,
-      //   },
-      //   768: {
-      //     slidesPerView: 3,
-      //     spaceBetween: 20,
-      //   },
-      //
-      //   1100: {
-      //     spaceBetween: 40,
-      //   },
-      // }
     });
+  })
 
   }
 

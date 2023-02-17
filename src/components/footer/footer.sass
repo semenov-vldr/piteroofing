@@ -1,2 +1,54 @@
 .footer
-  background-color: #fff
+  background-color: $black
+  color: #fff
+  padding: 40px 0
+
+  &__container
+    display: grid
+    grid-template-columns: repeat(3, auto)
+    justify-content: space-between
+    gap: 40px
+    @media (max-width: 768px)
+      grid-template-columns: 1fr
+      gap: 36px
+
+
+  &__col-title
+    @include fontSize(18, 24)
+    text-decoration: underline
+
+  &__text-main
+    font-size: 24px
+    @media (max-width: 1500px)
+      font-size: 20px
+    @media (max-width: $width-mobile)
+      font-size: 18px
+
+  &__col
+    display: flex
+    flex-direction: column
+    gap: 24px
+    white-space: nowrap
+    &--left
+      display: flex
+      flex-direction: column
+      gap: 24px
+
+  &__nav-list,
+  &__contact-list
+    display: flex
+    flex-direction: column
+    gap: 16px
+
+  &__contact-item span
+    margin-right: 8px
+
+  a:not(.logo)
+    opacity: 0.8
+    transition: $transition
+    &:hover
+      opacity: 1
+
+
+
+

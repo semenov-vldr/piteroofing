@@ -28,7 +28,7 @@
 
         uniqueNavElements: true,
 
-        slidesPerView: 1.5,
+        //slidesPerView: 1.5,
 
         // Бесконечная прокрутка
         loop: true,
@@ -39,7 +39,7 @@
         centeredSlides: true,
 
         // Отступ между слайдами
-        spaceBetween: 24,
+        //spaceBetween: 24,
 
         // Стартовый слайд
         initialSlide: 0,
@@ -47,23 +47,15 @@
         // Брейк поинты (адаптив)
         // Ширина экрана
         breakpoints: {
-          // 320: {
-          //   slidesPerView: 1.1,
-          //   spaceBetween: 16,
-          // },
-          //
-          // 480: {
-          //   slidesPerView: 2.2,
-          //   spaceBetween: 20,
-          // },
-          //
-          // 768: {
-          //   slidesPerView: 3.2
-          // },
-          //
-          // 1100: {
-          //   slidesPerView: 4
-          // },
+          320: {
+            slidesPerView: 1.2,
+            spaceBetween: 16,
+          },
+
+          768: {
+            slidesPerView: 1.5,
+            spaceBetween: 24,
+          },
         }
 
       });

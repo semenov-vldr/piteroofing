@@ -83,6 +83,22 @@ main
   margin-bottom: clamp(28px, calc(28px + (80 - 28) * ((100vw - 768px) / (1920 - 768))), 80px)
 
 
+.logo
+  position: relative
+  z-index: 2
+  @extend .flex-center
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: $white
+  @media (max-width: $width-mobile)
+    width: 40px
+    height: 40px
+  img
+    height: 30px
+    @media (max-width: $width-mobile)
+      height: 25px
+
 
 .flex-center
   display: flex
