@@ -14,7 +14,7 @@
 
 
   &__col-title
-    @include fontSize(18, 24)
+    @include fontSize(20, 24)
     text-decoration: underline
 
   &__text-main
@@ -33,6 +33,10 @@
       display: flex
       flex-direction: column
       gap: 24px
+      @media (max-width: 480px)
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
 
   &__nav-list,
   &__contact-list
@@ -40,14 +44,17 @@
     flex-direction: column
     gap: 16px
 
-  &__contact-item span
-    margin-right: 8px
-
   a:not(.logo)
     opacity: 0.8
     transition: $transition
     &:hover
       opacity: 1
+    @media (max-width: 768px)
+      opacity: 1
+
+  &__nav-link
+    font-size: 18px
+
 
 
 
