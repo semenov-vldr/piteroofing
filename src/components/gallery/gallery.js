@@ -60,16 +60,20 @@
 
       });
 
+
+      const images = swiper.querySelectorAll('.swiper-slide img');
+      images.forEach(image => {
+        image.setAttribute('data-src', image.src);
+        image.setAttribute('data-fancybox', "gallery");
+      });
+
+
+
     })
+
+
+
   };
-
-
-
-
-
-
-
-
 
 
 }
