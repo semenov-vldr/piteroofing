@@ -187,6 +187,8 @@ openForm()
 
 const header = document.querySelector('header.header');
 
+const desktopMobile = window.matchMedia('(min-width: 768px)').matches;
+
 if (header) {
 
   const headerBurger = header.querySelector('.header__burger');
@@ -196,10 +198,23 @@ if (header) {
     toggleScrollBody();
   });
 
+  //const headerNav = header.querySelector('.header__nav');
+
+  if (header.classList.contains('js-menu-open')) {
+    document.addEventListener('click', (evt) => {
+      if (!evt.target.classList.contains('header__nav')) {
+        header.classList.remove('js-menu-open');
+      }
+    })
+  }
+
+
+
   // scroll
   window.addEventListener('scroll', () => scrollHeader (header) );
 
 }
+
 
 
 {
@@ -269,7 +284,7 @@ if (excursions) {
 
       excursionsCard.addEventListener('click', (evt) => {
         if (evt.target.classList.contains('popup-excursion__close')
-          || evt.target.classList.contains('popup-excursion__button')) {
+          || evt.target.classList.contains('open-form')) {
           closePopup();
           unblockScrollBody();
         }
@@ -301,6 +316,87 @@ if (excursions) {
 }
 
 
+
+{
+
+  let mySwiper;
+
+  const swiperList = document.querySelectorAll('.reviews__slider');
+
+  if (swiperList) createSwiper(swiperList);
+
+
+
+  function createSwiper (swiperList) {
+    swiperList.forEach(swiper => {
+
+      mySwiper = new Swiper(swiper, {
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true,
+        // },
+        // navigation: {
+        //   nextEl: '.slider-nav__next',
+        //   prevEl: '.slider-nav__prev',
+        // },
+
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        //   draggable: true,
+        // },
+
+        uniqueNavElements: true,
+
+        //slidesPerView: 1.5,
+
+        // Бесконечная прокрутка
+        loop: true,
+
+        // Откл функционала, если слайдов меньше, чем нужно
+        watchOverflow: true,
+
+        centeredSlides: true,
+
+        // Отступ между слайдами
+        //spaceBetween: 24,
+
+        // Стартовый слайд
+        initialSlide: 0,
+
+        // Брейк поинты (адаптив)
+        // Ширина экрана
+        breakpoints: {
+          320: {
+            slidesPerView: 1.7,
+            spaceBetween: 16,
+          },
+
+          768: {
+            slidesPerView: 2.5,
+            spaceBetween: 24,
+          },
+
+          1200: {
+            slidesPerView: 3.5,
+            spaceBetween: 24,
+          },
+        }
+
+      });
+
+    })
+  };
+
+
+
+
+
+
+
+
+
+
+}
 
 // Params
 let mainSliderSelector = '.main-slider';
