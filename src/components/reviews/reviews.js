@@ -1,0 +1,80 @@
+{
+
+  let mySwiper;
+
+  const swiperList = document.querySelectorAll('.reviews__slider');
+
+  if (swiperList) createSwiper(swiperList);
+
+
+
+  function createSwiper (swiperList) {
+    swiperList.forEach(swiper => {
+
+      mySwiper = new Swiper(swiper, {
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true,
+        // },
+        // navigation: {
+        //   nextEl: '.slider-nav__next',
+        //   prevEl: '.slider-nav__prev',
+        // },
+
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        //   draggable: true,
+        // },
+
+        uniqueNavElements: true,
+
+        //slidesPerView: 1.5,
+
+        // Бесконечная прокрутка
+        loop: true,
+
+        // Откл функционала, если слайдов меньше, чем нужно
+        watchOverflow: true,
+
+        centeredSlides: true,
+
+        // Отступ между слайдами
+        //spaceBetween: 24,
+
+        // Стартовый слайд
+        initialSlide: 0,
+
+        // Брейк поинты (адаптив)
+        // Ширина экрана
+        breakpoints: {
+          320: {
+            slidesPerView: 1.7,
+            spaceBetween: 16,
+          },
+
+          768: {
+            slidesPerView: 2.5,
+            spaceBetween: 24,
+          },
+
+          1200: {
+            slidesPerView: 3.5,
+            spaceBetween: 24,
+          },
+        }
+
+      });
+
+    })
+  };
+
+
+
+
+
+
+
+
+
+
+}

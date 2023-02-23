@@ -36,13 +36,12 @@
     grid-template-columns: repeat(2, 1fr)
     gap: 40px
     @media (max-width: $width-mobile)
-      padding: 40px 20px 20px
+      padding: 70px 20px 20px
       grid-template-columns: 1fr
 
   &__close
-    position: absolute
-    right: 40px
-
+    @media (max-width: $width-mobile)
+    right: 20px
 
   &__slider
     overflow: hidden

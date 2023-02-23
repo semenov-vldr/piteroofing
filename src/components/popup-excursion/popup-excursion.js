@@ -15,7 +15,7 @@ if (excursions) {
 
       excursionsCard.addEventListener('click', (evt) => {
         if (evt.target.classList.contains('popup-excursion__close')
-          || evt.target.classList.contains('popup-excursion__button')) {
+          || evt.target.classList.contains('open-form')) {
           closePopup();
           unblockScrollBody();
         }

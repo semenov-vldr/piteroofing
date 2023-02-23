@@ -37,7 +37,7 @@
   &__nav
     @media (max-width: 768px)
       position: fixed
-      width: 100%
+      width: 70%
       height: 100vh
       max-height: 100vh
       min-height: 480px
@@ -55,6 +55,8 @@
       padding: 0 0 70px
       transform: translateX(-100%)
       transition: $transition
+      @media (max-width: 400px)
+        width: 80%
 
 
   &__nav-list
@@ -99,6 +101,11 @@
       display: flex
       gap: 12px
       align-items: center
+
+    &-link svg
+      @media (max-width: 768px)
+        width: 40px
+        height: 40px
 
     &.header__social--mobile
       display: none

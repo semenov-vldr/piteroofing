@@ -131,21 +131,25 @@ button
 
 .close-btn
   position: absolute
-  font-size: 24px
   right: 40px
   top: 20px
+  width: 34px
+  height: 34px
   cursor: pointer
   transition: $transition
-  @media (min-width: 480px)
-    svg
-      background-color: #d0d0d0
-      padding: 5px
-      border-radius: 50%
-      fill: #fff
-      box-sizing: content-box
-  @media (max-width: 768px)
-    right: 20px
-  &:hover svg
+  background-color: #d0d0d0
+  padding: 5px
+  border-radius: 50%
+  &::after
+    content: ""
+    display: inline-block
+    background-image: url('../img/icons/close.svg')
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    width: 24px
+    height: 24px
+  &:hover
     background-color: #c4c4c4
   @media (max-width: 480px)
     position: fixed
@@ -153,14 +157,12 @@ button
     right: 0
     left: 0
     padding: 10px 20px
-    color: #fff
     background-color: $black
     width: 100%
     display: flex
     align-items: center
     justify-content: flex-end
-    svg
-      fill: #fff
+    border-radius: 0
 
 
 
